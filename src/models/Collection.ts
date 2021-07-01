@@ -1,6 +1,7 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosResponse } from 'axios';
+import { User } from './User';
 
-import { Eventing } from "./Eventing";
+import { Eventing } from './Eventing';
 
 export class Collection<T, K> {
   models: User[] = [];
@@ -21,7 +22,7 @@ export class Collection<T, K> {
       response.data.forEach((value: K) => {
         this.deserialize(value);
       });
-      this.trigger("change");
+      this.trigger('change');
     });
   }
 }
